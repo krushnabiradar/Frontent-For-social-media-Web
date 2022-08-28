@@ -1,35 +1,33 @@
-// import { CoverModal } from "components/index";
-import { Picker } from "emoji-mart";
+import React, { useEffect, useRef, useState, createRef } from "react";
 import "emoji-mart/css/emoji-mart.css";
-import React, { createRef, useEffect, useRef, useState } from "react";
-import { ScrollHook } from "../../../hooks/ScrollHook";
-import { checkMedia } from "../../../utils/checkMedia";
-import { AvatarUser } from "../../../utils/helper";
-import { showImage, showVideo } from "../../../utils/media";
-import CoverModal from "./../../CoverModal";
-
+import { Picker } from "emoji-mart";
+import { CoverModal } from "components/index";
+import { showImage, showVideo } from "utils/media";
+import { AvatarUser } from "utils/helper";
+import { checkMedia } from "utils/checkMedia";
+import { ScrollHook } from "hooks/ScrollHook";
 // redux
-import { useDispatch, useSelector } from "react-redux";
-import { createPost, updatePost } from "../../../redux/actions/actionPost";
-import { GLOBALTYPES } from "../../../redux/actions/constant";
+import { useSelector, useDispatch } from "react-redux";
+import { GLOBALTYPES } from "redux/actions/constant";
 import {
   authState,
   openModelPost,
   reducerPosts,
-  socketState
-} from "../../../redux/store";
+  socketState,
+} from "redux/store";
+import { createPost, updatePost } from "redux/actions/actionPost";
 // @mui
-import CancelIcon from "@mui/icons-material/Cancel";
-import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
 import InsertPhotoOutlinedIcon from "@mui/icons-material/InsertPhotoOutlined";
 import PublicIcon from "@mui/icons-material/Public";
+import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
+import CancelIcon from "@mui/icons-material/Cancel";
 import {
   Box,
   FormControl,
   IconButton,
   Stack,
+  Typography,
   Tooltip,
-  Typography
 } from "@mui/material";
 
 function PostModal() {
@@ -345,7 +343,6 @@ function PostModal() {
                         overflow: "hidden",
                         height: "200px !important",
                         zIndex: 999,
-
                         width: "fit-content",
                         bottom: "60px",
                       }}

@@ -1,8 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import styles from "../more/stylesMore.module.css";
-import CoverModal from './../../../CoverModal';
-
+import { CoverModal } from "components/index";
 function MoreComment({
   post,
   comment,
@@ -37,7 +36,7 @@ function MoreComment({
 
   return (
     <Box onClick={() => setMore(false)}>
-      <CoverModal >
+      <CoverModal>
         <Box
           className={styles.styledCardApp}
           sx={{ width: { xs: "93vw", sm: "350px", md: "450px" } }}

@@ -1,9 +1,7 @@
-import { Container, Grid } from "@mui/material";
 import React, { useEffect } from "react";
-import Chat from "../../components/chats/Chat";
 import { ScrollHook } from "../../hooks/ScrollHook";
-import ChatsMenue from './../../components/chats/ChatsMenue';
-
+import { Container, Grid } from "@mui/material";
+import { Chat, ChatsMenue } from "components/index";
 function PageChat() {
   const { hiddenScroll } = ScrollHook();
   useEffect(() => {
@@ -19,7 +17,6 @@ function PageChat() {
           height: "calc(100vh - 100px)",
           marginTop: "20px!important",
         }}
-
       >
         <Grid item sx={{ display: { xs: "none", md: "block" } }} xs={0} md={4}>
           <ChatsMenue />

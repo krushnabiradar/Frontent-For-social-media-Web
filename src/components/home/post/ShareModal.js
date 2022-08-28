@@ -1,10 +1,9 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
-import CoverModal from './../../CoverModal';
+import { CoverModal } from "components/index";
 // react share
 import {
-
   EmailShareButton,
   FacebookShareButton,
   FacebookMessengerShareButton,

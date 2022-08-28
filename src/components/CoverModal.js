@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, IconButton, Tooltip } from "@mui/material";
+import {IconButton, Tooltip } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 function CoverModal({ children, backgroundCalling }) {
@@ -8,7 +8,7 @@ function CoverModal({ children, backgroundCalling }) {
     e.stopPropagation();
   };
   return (
-    <Box
+    <div
       sx={{
         position: "fixed",
         inset: 0,
@@ -20,7 +20,7 @@ function CoverModal({ children, backgroundCalling }) {
           : { background: "var(--modalColor)" }
       }
     >
-      <Box
+      <div
         sx={{ position: "absolute", top: "3px", right: "1px", zIndex: 999999 }}
       >
         <Tooltip title="Close" sx={{ zIndex: 9999 }}>
@@ -28,8 +28,8 @@ function CoverModal({ children, backgroundCalling }) {
             <CloseIcon style={{ fontSize: "30px", color: "#ddd" }} />
           </IconButton>
         </Tooltip>
-      </Box>
-      <Box
+      </div>
+      <div
         sx={{
           position: "absolute",
           top: "50%",
@@ -41,8 +41,8 @@ function CoverModal({ children, backgroundCalling }) {
         onClick={handleFocusInCard}
       >
         {children}
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 }
 

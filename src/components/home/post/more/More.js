@@ -2,15 +2,13 @@ import React from "react";
 import { Box } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../../../utils/config";
-
-
+import { CoverModal } from "components/index";
 import styles from "./stylesMore.module.css";
 // redux
 import { useDispatch, useSelector } from "react-redux";
 import { GLOBALTYPES } from "../../../../redux/actions/constant";
 import { deletePost } from "../../../../redux/actions/actionPost";
 import { socketState } from "../../../../redux/store";
-import CoverModal from "../../../CoverModal";
 function More({ auth, post, setMore, showModelSharePost }) {
   // STates And Functions
   const { MODEL_POST } = GLOBALTYPES;

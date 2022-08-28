@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import notfound from "../assets/images/notfound.png";
+import notfound from "assets/images/notfound.png";
 
 function InfoLogin() {
   return (

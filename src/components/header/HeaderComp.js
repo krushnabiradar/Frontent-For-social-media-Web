@@ -1,35 +1,37 @@
-import React, { useEffect } from "react";
+import { DataSearch, LogicHeader, NotificationModel } from "components/index";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-// import { DataSearch, NotificationModel, LogicHeader } from "components/index";
-import { AvatarUser } from "../../utils/helper";
+import { AvatarUser } from "utils/helper";
 // @mui
 import {
   Badge, Box, Container, IconButton, Menu, MenuItem, Tooltip, Typography
 } from "@mui/material";
 //icons
-import ChatOut from "@heroicons/react/outline/ChatIcon";
-import HeartOut from "@heroicons/react/outline/HeartIcon";
-import HomeOut from "@heroicons/react/outline/HomeIcon";
-import ChatSolid from "@heroicons/react/solid/ChatIcon";
-import HeartSolid from "@heroicons/react/solid/HeartIcon";
-import HomeSolid from "@heroicons/react/solid/HomeIcon";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import ExploreIcon from "@mui/icons-material/Explore";
-import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
+import ChatBubbleOutlinedIcon from '@mui/icons-material/ChatBubbleOutlined';
+import ChatOutlinedIcon from '@mui/icons-material/ChatOutlined';
 import LogoutIcon from "@mui/icons-material/Logout";
 import SearchIcon from "@mui/icons-material/Search";
 
-import LoadingIcon from "../../assets/images/loading.gif";
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+
+import HomeIcon from '@mui/icons-material/Home';
+
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+
+import ExploreIcon from "@mui/icons-material/Explore";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+
+import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
+
+import LoadingIcon from "assets/images/loading.gif";
 import {
   styledAppBar, styledIconWrapper, styledInput, styledParentHeader, styledSearch, styledSearchData
 } from "./Style_header";
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { authState } from "../../redux/store";
-import NotificationsModel from "../NotificationModel"
-import { getNotification } from "../../redux/actions/actionNotifications";
-import DataSearch from "./DataSearch";
-import LogicHeader from "./LogicHeader";
+import { getNotification } from "redux/actions/actionNotifications";
+import { authState } from "redux/store";
 export default function HeaderComp() {
   const dispatch = useDispatch();
   const auth = useSelector(authState);
@@ -80,7 +82,7 @@ export default function HeaderComp() {
                   variant="h4"
                   onClick={() => window.scrollTo({ top: 0 })}
                 >
-                  Soicaly
+                  Social Media
                 </Typography>
               </Box>
             </Link>
@@ -172,9 +174,9 @@ export default function HeaderComp() {
                       color="inherit"
                     >
                       {location === "/" ? (
-                        <HomeSolid width="1.5rem" color="var(--iconColor)" />
+                        <HomeIcon width="1.5rem" color="var(--iconColor)" />
                       ) : (
-                        <HomeOut width="1.5rem" color="var(--iconColor)" />
+                        <HomeOutlinedIcon width="1.5rem" color="var(--iconColor)" />
                       )}
                     </IconButton>
                   </Tooltip>
@@ -188,9 +190,9 @@ export default function HeaderComp() {
                       color="inherit"
                     >
                       {location === "/chats" ? (
-                        <ChatSolid width="1.5rem" color="var(--iconColor)" />
+                        <ChatBubbleOutlinedIcon width="1.5rem" color="var(--iconColor)" />
                       ) : (
-                        <ChatOut width="1.5rem" color="var(--iconColor)" />
+                        <ChatOutlinedIcon width="1.5rem" color="var(--iconColor)" />
                       )}
                     </IconButton>
                   </Tooltip>
@@ -217,7 +219,7 @@ export default function HeaderComp() {
                   onClick={() => setIsNotifications(!isNotifications)}
                 >
                   {isNotifications && (
-                    <NotificationsModel notifications={notifications} />
+                    <NotificationModel notifications={notifications} />
                   )}
 
                   <Tooltip
@@ -237,9 +239,9 @@ export default function HeaderComp() {
                         color="error"
                       >
                         {isNotifications ? (
-                          <HeartSolid width="1.5rem" color="var(--iconColor)" />
+                          <FavoriteIcon width="1.5rem" color="var(--iconColor)" />
                         ) : (
-                          <HeartOut width="1.5rem" color="var(--iconColor)" />
+                          <FavoriteOutlinedIcon width="1.5rem" color="var(--iconColor)" />
                         )}
                       </Badge>
                     </IconButton>

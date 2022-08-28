@@ -1,12 +1,11 @@
-import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { getDetailsPost } from "../../redux/actions/actionPost";
+import { useDispatch, useSelector } from "react-redux";
 import { authState, reducerDetailPost } from "../../redux/store";
-
+import { getDetailsPost } from "../../redux/actions/actionPost";
+import { Typography, Box, Button } from "@mui/material";
+import { Post } from "components/index";
 import { resMessagesState } from "../../redux/store";
-import Post from './../../components/home/post/Post';
 function PagePost() {
   const { error } = useSelector(resMessagesState);
   const { id } = useParams();

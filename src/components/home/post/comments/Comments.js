@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Box } from "@mui/material";
-import Comment from './Comment';
+import { Comment } from "components/index";
 
 function Comments({ post }) {
   const [comments, setComments] = useState([]);

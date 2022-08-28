@@ -3,11 +3,9 @@ import { useDispatch } from "react-redux";
 import { PROFILE_TYPES } from "../../redux/actions/constant";
 import { GetAPIData } from "../../utils/fetchData";
 import { useParams } from "react-router";
+import { Loading, LoadMoreButton, PostThumb } from "components/index";
 import { Box, Typography } from "@mui/material";
 import PhotoCameraOutlinedIcon from "@mui/icons-material/PhotoCameraOutlined";
-import Loading from "../allResponseMessages/Loading";
-import LoadMoreButton from "../LoadMoreButton";
-import PostThumb from "./postProfile/PostThumb";
 function Posts({ auth, profileUser }) {
   const { GET_MORE_POST } = PROFILE_TYPES;
   const { id } = useParams();

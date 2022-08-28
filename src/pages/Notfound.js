@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box, Container, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import notfound from "../assets/images/notfound.png";
+import notfound from "assets/images/notfound.png";
 function Notfound() {
   const [isNotFound, setIsNotFound] = useState(false);
   // handle show
@@ -39,7 +39,7 @@ function Notfound() {
               to="/"
             >
               <Typography variant="h5" className="logo_text">
-                Soicaly
+                Social Media
               </Typography>
             </Link>
           </Box>

@@ -1,25 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate, useParams } from "react-router";
-import { GetAPIData } from "../../utils/fetchData";
+import { GetAPIData } from "utils/fetchData";
 
 // @mui
+import { Box, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import SentimentSatisfiedIcon from "@mui/icons-material/SentimentSatisfied";
-import { Box, Typography } from "@mui/material";
 // redux
-import { useDispatch, useSelector } from "react-redux";
-import { getChats, openChatUser } from "../../redux/actions/actionChats";
-import { CHATS_TYPES } from "../../redux/actions/constant";
-import { authState, chatsState, onlineState } from "../../redux/store";
+import { useSelector, useDispatch } from "react-redux";
+import { authState, chatsState, onlineState } from "redux/store";
+import { getChats, openChatUser } from "redux/actions/actionChats";
+import { CHATS_TYPES } from "redux/actions/constant";
 // components
-import { DebounceHook } from "../../hooks/DebounceHook";
-import Loading from "../allResponseMessages/Loading";
-import UserChat from "./UserChat";
-
-
-
-
-
+import { UserChat, Loading } from "components/index";
+import { DebounceHook } from "hooks/DebounceHook";
 function ChatsMenue() {
   // States And Functions
   const navigate = useNavigate();

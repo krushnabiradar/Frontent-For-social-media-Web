@@ -1,7 +1,5 @@
 import React, { memo } from "react";
-import LoginComp from './../components/login_register/LoginComp';
-
-
+import { LoginComp } from "components/index";
 function Login() {
   return <LoginComp />;
 }

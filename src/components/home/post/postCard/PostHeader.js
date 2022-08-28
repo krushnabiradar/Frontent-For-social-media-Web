@@ -1,18 +1,16 @@
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import { Box, IconButton, Stack, Tooltip, Typography } from "@mui/material";
-import moment from "moment";
 import React, { useState } from "react";
+import moment from "moment";
 import { Link } from "react-router-dom";
 import { AvatarUser } from "../../../../utils/helper";
-
-
+import { Box, Stack, Tooltip, Typography, IconButton } from "@mui/material";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import { More } from "components/index";
 import { useSelector } from "react-redux";
 import { authState } from "../../../../redux/store";
-import More from './../more/More';
 
 
 
-const PostHeader = ({ post, showModelSharePost }) => {
+function PostHeader ({ post, showModelSharePost }) {
   const auth = useSelector(authState);
   const [more, setMore] = useState(false);
   // Handle Show More
@@ -58,7 +56,7 @@ const PostHeader = ({ post, showModelSharePost }) => {
         </Stack>
       </Box>
       <Box>
-        {More && (
+        {more && (
           <More
             post={post}
             setMore={setMore}
@@ -66,13 +64,13 @@ const PostHeader = ({ post, showModelSharePost }) => {
             showModelSharePost={showModelSharePost}
           />
         )}
-        <Stack>
+        <div>
           <Tooltip title="more" placement="top" arrow>
             <IconButton onClick={handleShowMore}>
               <MoreHorizIcon style={{ color: "var(--iconColor)" }} />
             </IconButton>
           </Tooltip>
-        </Stack>
+        </div>
       </Box>
     </Box>
   );

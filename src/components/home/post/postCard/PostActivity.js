@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { LikePost } from "components/index";
 
 // @mui
-import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import BookmarkAddedIcon from "@mui/icons-material/BookmarkAdded";
-import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
-import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import { Box, IconButton, Tooltip } from "@mui/material";
+import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
+import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlined";
+import BookmarkAddedIcon from "@mui/icons-material/BookmarkAdded";
+import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 // redux
 import { useDispatch, useSelector } from "react-redux";
 import {
   likePost,
   savePost,
   unLikePost,
-  unSavePost
-} from "../../../../redux/actions/actionPost";
-import { authState, socketState } from "../../../../redux/store";
-import LikePost from './../LikePost';
+  unSavePost,
+} from "redux/actions/actionPost";
+import { authState, socketState } from "redux/store";
 
 const PostActivity = ({ post, showModelSharePost }) => {
   // States And Functions

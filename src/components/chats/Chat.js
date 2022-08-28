@@ -9,22 +9,21 @@ import CancelIcon from "@mui/icons-material/Cancel";
 // redux && store
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
-
+import { authState, chatsState, socketState } from "redux/store";
 import {
   deleteChat,
   getMessages,
   loadMoreMessages,
   sendMessage,
-} from "../../redux/actions/actionChats";
+} from "redux/actions/actionChats";
 
 // utils
-import { CHATS_TYPES, GLOBALTYPES } from "../../redux/actions/constant";
-import { showVideo, showImage } from "../../utils/media";
-import { uploadImages } from "../../utils/uploadImages";
-import { authState, chatsState, socketState } from "../../redux/store";
-import UserChat from "./UserChat";
-import DisplayMessage from "./DisplayMessage";
-import Loading from "../allResponseMessages/Loading";
+import { CHATS_TYPES, GLOBALTYPES } from "redux/actions/constant";
+import { showVideo, showImage } from "utils/media";
+import { uploadImages } from "utils/uploadImages";
+
+// components
+import { Loading, UserChat, DisplayMessage } from "components/index";
 
 function Chat() {
   const styledChatContainer = {
@@ -274,41 +273,40 @@ function Chat() {
             ref={pageEndRef}
             style={{ pointerEvents: "none", opacity: "1" }}
           />
-          {messages &&
-            messages?.map((message, idx) => (
-              <Box key={idx}>
-                {message.sender === auth.user._id && (
-                  <Box
-                    style={styledAppMessage}
-                    justifyContent="end"
-                    justifyItems="end"
-                  >
-                    <DisplayMessage
-                      user={auth?.user}
-                      message={message && message}
-                      auth={auth}
-                      messages={messages && messages}
-                      myMessage
-                    />
-                  </Box>
-                )}
-                {message?.sender !== auth?.user._id && (
-                  <Box
-                    style={styledAppMessage}
-                    justifyContent="start"
-                    justifyItems="start"
-                  >
-                    <DisplayMessage
-                      user={user}
-                      message={message}
-                      messages={messages}
-                      auth={auth}
-                      youMessage
-                    />
-                  </Box>
-                )}
-              </Box>
-            ))}
+          {messages && messages?.map((message, idx) => (
+            <Box key={idx}>
+              {message.sender === auth.user._id && (
+                <Box
+                  style={styledAppMessage}
+                  justifyContent="end"
+                  justifyItems="end"
+                >
+                  <DisplayMessage
+                    user={auth?.user}
+                    message={message && message}
+                    auth={auth}
+                    messages={messages && messages}
+                    myMessage
+                  />
+                </Box>
+              )}
+              {message?.sender !== auth?.user._id && (
+                <Box
+                  style={styledAppMessage}
+                  justifyContent="start"
+                  justifyItems="start"
+                >
+                  <DisplayMessage
+                    user={user}
+                    message={message}
+                    messages={messages}
+                    auth={auth}
+                    youMessage
+                  />
+                </Box>
+              )}
+            </Box>
+          ))}
 
           {loadingMedia && <Loading width="30px" margin="0px 10px 0px auto" />}
         </Box>

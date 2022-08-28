@@ -1,7 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import CoverModal from "../CoverModal";
-import UserCard from "../UserCard";
+import { CoverModal, UserCard } from "components/index";
 function Following({ following, setShowFollowing }) {
   return (
     <Box onClick={() => setShowFollowing(false)}>

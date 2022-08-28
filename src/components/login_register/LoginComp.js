@@ -1,10 +1,7 @@
-import { Box, Grid, Tooltip, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
+import { Typography, Box, Grid, Tooltip } from "@mui/material";
 import login from "../../assets/images/login.png";
-
-
-import FormInput from './FormInput';
-import LogicLogin from './LogicLogin';
+import { LogicLogin, FormInput } from "components/index";
 import styles from "./login_register.module.css";
 function LoginComp() {
   const { inputs, values, handleChange, handleLogin } = LogicLogin();
@@ -29,7 +26,7 @@ function LoginComp() {
           padding="20px"
         >
           <Typography variant="h2" fontSize="40px" className="logo_text">
-            Socialy
+          Social Media
           </Typography>
           <form
             onSubmit={handleLogin}

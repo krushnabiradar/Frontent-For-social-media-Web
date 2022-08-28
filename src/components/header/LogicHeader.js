@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { GetAPIData } from "../../utils/fetchData";
 import { authState, notificationsState } from "../../redux/store";
 import { logout } from "../../redux/actions/actionAuth";
-import { DebounceHook } from "../../hooks/DebounceHook";
+import { DebounceHook } from "hooks/DebounceHook";
 const LogicHeader = () => {
   const notifications = useSelector(notificationsState);
   const location = useLocation().pathname;

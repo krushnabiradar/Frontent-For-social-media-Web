@@ -5,6 +5,7 @@ import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
 import NotificationsOffOutlinedIcon from "@mui/icons-material/NotificationsOffOutlined";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import NotificationImportantIcon from "@mui/icons-material/NotificationImportant";
+import { Loading } from "components/index";
 import { useDispatch, useSelector } from "react-redux";
 import {
   closeNotificationSound,
@@ -14,7 +15,6 @@ import {
 } from "../redux/actions/actionNotifications";
 import { authState, notificationsState } from "../redux/store";
 import { AvatarUser } from "../utils/helper";
-import Loading from "./allResponseMessages/Loading";
 function NotificationModel({ notifications }) {
   // States And Functions
   const dispatch = useDispatch();

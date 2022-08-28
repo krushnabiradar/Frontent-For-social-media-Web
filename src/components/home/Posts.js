@@ -1,16 +1,11 @@
-import { Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-
+import { Typography } from "@mui/material";
+import { Post, LoadMoreButton, Loading, LoadingPosts } from "components/index";
 // redux
 import { useDispatch, useSelector } from "react-redux";
-import { POST_TYPES } from "../../redux/actions/constant";
 import { authState, reducerPosts } from "../../redux/store";
 import { GetAPIData } from "../../utils/fetchData";
-// 
-import Loading from "../allResponseMessages/Loading";
-import LoadingPosts from "../allResponseMessages/LoadingPosts";
-import LoadMoreButton from "../LoadMoreButton.js";
-import Post from "./post/Post";
+import { POST_TYPES } from "../../redux/actions/constant";
 
 function Posts() {
   const homePosts = useSelector(reducerPosts);

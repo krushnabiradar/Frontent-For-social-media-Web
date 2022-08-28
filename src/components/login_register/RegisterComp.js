@@ -1,13 +1,9 @@
-import { Box, Grid, Tooltip, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-
-
-
-import register from "../../assets/images/register.png";
-import FormInput from './FormInput';
-import LogicRegister from './LogicRegister';
+import { Typography, Box, Grid, Tooltip } from "@mui/material";
+import { LogicRegister, FormInput } from "components/index";
 import styles from "./login_register.module.css";
+import register from "assets/images/register.png";
 function RegisterComp() {
   const { inputs, values, handleChange, handleRegister } = LogicRegister();
   const userAddInfo =
@@ -36,7 +32,7 @@ function RegisterComp() {
           padding="20px"
         >
           <Typography variant="h2" fontSize="40px" className="logo_text">
-            Socialy
+          Social Media
           </Typography>
           <form
             onSubmit={handleRegister}

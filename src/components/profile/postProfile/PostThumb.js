@@ -1,9 +1,10 @@
-import ChatIcon from "@heroicons/react/solid/ChatIcon";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import { Box, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import { showImage, showVideo } from "../../../utils/media";
+import { showVideo, showImage } from "utils/media";
+import { Box, Typography } from "@mui/material";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+// import ChatIcon from "@heroicons/react/solid/ChatIcon";
+import ChatBubbleOutlinedIcon from '@mui/icons-material/ChatBubbleOutlined';
 function PostThumb({ posts }) {
   const styledMedia = {
     display: "block",
@@ -77,7 +78,7 @@ function PostThumb({ posts }) {
                   alignItems="center"
                   margin="10px"
                 >
-                  <ChatIcon
+                  <ChatBubbleOutlinedIcon
                     style={{ width: "30px", color: "#fff", margin: "5px" }}
                   />
                   <Typography

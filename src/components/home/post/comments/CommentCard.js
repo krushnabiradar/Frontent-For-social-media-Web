@@ -1,28 +1,20 @@
 import React, { useState } from "react";
-import { AvatarUser } from "../../../../utils/helper";
+import { AvatarUser } from "utils/helper";
 import moment from "moment";
 import { Link } from "react-router-dom";
-// import {
-//   LikeButton,
-//   MoreComment,
-//   EditComment,
-//   InputComment,
-// } from "components/index";
-
-
-
-
+import {
+  LikeButton,
+  MoreComment,
+  EditComment,
+  InputComment,
+} from "components/index";
 // @mui
 import { Box, Button, IconButton, Tooltip, Typography } from "@mui/material";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 // redux
-import { authState, socketState } from "../../../../redux/store";
+import { authState, socketState } from "redux/store";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteComment } from "../../../../redux/actions/actionComment";
-import EditComment from './EditComment';
-import LikeButton from './LikeButton';
-import MoreComment from './MoreComment';
-import InputComment from './InputComment';
+import { deleteComment } from "redux/actions/actionComment";
 function CommentCard({ children, comment, post }) {
   // States and Functions
   const auth = useSelector(authState);
@@ -120,7 +112,7 @@ function CommentCard({ children, comment, post }) {
                     </Typography>
                   </Link>
                 )}
-                <Typography sx={{ wordBreak: "break-all" }}>
+                <Typography sx={{ wordbreak: "break-all" }}>
                   {comment.comment?.length < 100
                     ? comment?.comment
                     : readMore

@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import InsertPhotoOutlinedIcon from "@mui/icons-material/InsertPhotoOutlined";
-import { AvatarUser } from "../../utils/helper";
+import { AvatarUser } from "utils/helper";
 function UserChat({ user, active, userMenue, userOnline }) {
   return (
     <Box
@@ -42,7 +42,7 @@ function UserChat({ user, active, userMenue, userOnline }) {
             border="3px solid var(--lineColor)"
             right="0px"
             bottom="3px"
-            wordBreak=" break-word"
+            wordbreak=" break-word"
           />
         </Box>
         <Box

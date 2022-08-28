@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import { Button, Grid, Box, Typography } from "@mui/material";
 import { useDispatch } from "react-redux";
-import { AvatarUser } from "../../utils/helper";
+import { AvatarUser } from "utils/helper";
 import {
   EditProfile,
   FollowButtonToggle,

@@ -1,8 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Loading, ErrorMessage } from "components/index";
 import { resMessagesState } from "../../redux/store";
-import ErrorMessage from "./ErrorMessage";
-import Loading from "./Loading";
 function IndexResponse() {
   const resMessages = useSelector(resMessagesState);
   return (

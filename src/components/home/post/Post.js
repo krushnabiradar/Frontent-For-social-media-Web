@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
 import { BASE_URL } from "../../../utils/config";
-import Comments from "./comments/Comments";
-import InputComment from "./comments/InputComment";
-import PostActivity from "./postCard/PostActivity";
-import PostContent from "./postCard/PostContent";
-import PostHeader from "./postCard/PostHeader";
-import ShareModal from "./ShareModal";
+
+import {
+  Comments,
+  InputComment,
+  ShareModal,
+  PostHeader,
+  PostContent,
+  PostActivity,
+} from "components/index";
 
 function Post({ post }) {
   // Functions and States

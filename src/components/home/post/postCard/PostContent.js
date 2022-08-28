@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { Box, Typography } from "@mui/material";
-import ImageSlider from './../ImageSlider';
-
-
+import { ImageSlider } from "components/index";
 const PostContent = ({ post }) => {
   const [readMore, setReadMore] = useState(false);
   return (

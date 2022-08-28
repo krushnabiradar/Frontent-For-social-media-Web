@@ -1,8 +1,8 @@
-import React from "react";
-import RegisterComp from './../components/login_register/RegisterComp';
+import React, { memo } from "react";
+import { RegisterComp } from "components/index";
 
 function Register() {
-  return <RegisterComp />
+  return <RegisterComp />;
 }
 
-export default Register;
+export default memo(Register);

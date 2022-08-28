@@ -1,7 +1,6 @@
-import { Box, Button } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import CommentCard from "./CommentCard";
-
+import { Box, Button } from "@mui/material";
+import { CommentCard } from "components/index";
 function Comment({ post, comment, replyComments }) {
   // States And Functions
   const [showReplay, setShowReplay] = useState([]);

@@ -4,9 +4,7 @@ import BookmarkBorderOutlinedIcon from "@mui/icons-material/BookmarkBorderOutlin
 import { GetAPIData } from "../../utils/fetchData";
 import { useDispatch } from "react-redux";
 import { GLOBALTYPES } from "../../redux/actions/constant";
-import LoadingPage from "../allResponseMessages/LoadingPage";
-import LoadMoreButton from "../LoadMoreButton";
-import PostThumb from "./postProfile/PostThumb";
+import { Loading, PostThumb, LoadMoreButton } from "components/index";
 
 function PostsSaved({ auth }) {
   const { RESPONSEMESSAGE } = GLOBALTYPES;
@@ -91,7 +89,7 @@ function PostsSaved({ auth }) {
       )}
 
       {loading ? (
-        <LoadingPage width="40px" />
+        <Loading width="40px" />
       ) : (
         <LoadMoreButton
           postsCount={postsCount}

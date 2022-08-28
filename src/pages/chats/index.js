@@ -1,11 +1,7 @@
-import { Container, Grid } from "@mui/material";
 import React, { useEffect } from "react";
-import ChatsMenue from "../../components/chats/ChatsMenue";
+import { Container, Grid } from "@mui/material";
 import { ScrollHook } from "../../hooks/ScrollHook";
-
-import NoOpenChat from './../../components/chats/NoOpenChat';
-
-
+import { ChatsMenue, NoOpenChat } from "components/index";
 function Chats() {
   const { hiddenScroll } = ScrollHook();
   // eslint-disable-next-line react-hooks/rules-of-hooks

@@ -1,21 +1,12 @@
-import { Container } from "@mui/material";
-// import { Loading, LoadMoreButton, PostThumb } from "components/index";
-
-
-
-
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import Loading from "../components/allResponseMessages/Loading";
-import { ScrollHook } from "../hooks/ScrollHook";
-import { getExplorePosts } from "../redux/actions/acttionExplore";
-import { EXPLORE_TYPES } from "../redux/actions/constant";
-import { authState, stateExplore } from "../redux/store";
-import { GetAPIData } from "../utils/fetchData";
-import PostThumb from '../components/profile/postProfile/PostThumb';
-import LoadMoreButton from "../components/LoadMoreButton";
-
-
+import { useSelector, useDispatch } from "react-redux";
+import { getExplorePosts } from "redux/actions/acttionExplore";
+import { authState, stateExplore } from "redux/store";
+import { GetAPIData } from "utils/fetchData";
+import { EXPLORE_TYPES } from "redux/actions/constant";
+import { ScrollHook } from "hooks/ScrollHook";
+import { Loading, PostThumb, LoadMoreButton } from "components/index";
+import { Container } from "@mui/material";
 
 function Explore() {
   const { GET_MORE_POST } = EXPLORE_TYPES;

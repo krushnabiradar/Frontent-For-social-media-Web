@@ -1,10 +1,9 @@
-import React from "react";
-import { Box, IconButton, Typography } from "@mui/material";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import { useDispatch } from "react-redux";
-import { deleteMessage } from "../../redux/actions/actionChats";
+import { IconButton, Typography } from "@mui/material";
 import moment from "moment";
-import { showImage, showVideo } from "../../utils/media";
+import { useDispatch } from "react-redux";
+import { deleteMessage } from "redux/actions/actionChats";
+import { showImage, showVideo } from "utils/media";
 import styles from "./styles.module.css";
 function DisplayMessage({ user, message, myMessage, messages, auth }) {
   // Styles
@@ -26,7 +25,7 @@ function DisplayMessage({ user, message, myMessage, messages, auth }) {
 
   return (
     <>
-      <Box className={styles.messageContent} display="flex" alignItems="center">
+      <div className={styles.messageContent} display="flex" alignItems="center">
         {user._id === auth.user._id && (
           <IconButton
             onClick={handleDeleteMessage}
@@ -36,15 +35,15 @@ function DisplayMessage({ user, message, myMessage, messages, auth }) {
           </IconButton>
         )}
         {message.media.map((imageOrVideo, idx) => (
-          <Box key={idx}>
+          <div key={idx}>
             {imageOrVideo.secure_url.match(/video/i)
               ? showVideo(imageOrVideo.secure_url, styledMedia)
               : showImage(imageOrVideo.secure_url, styledMedia)}
-          </Box>
+          </div>
         ))}
 
         {message.messageText && (
-          <Box
+          <div
             border="1px solid var(--lineColor)"
             margin="6px 10px 0px"
             minHeight="44px"
@@ -65,19 +64,19 @@ function DisplayMessage({ user, message, myMessage, messages, auth }) {
               fontSize="16px"
               fontWeight="500"
               padding="10px"
-              sx={{ wordBreak: "break-all" }}
+              sx={{ wordbreak: "break-all" }}
             >
               {message.messageText}
             </Typography>
-          </Box>
+          </div>
         )}
-      </Box>
+      </div>
 
-      <Box margin="0 20px">
+      <div margin="0 20px">
         <Typography variant="h6" fontSize="10px">
           {moment(message.createdAt).fromNow()}
         </Typography>
-      </Box>
+      </div>
     </>
   );
 }

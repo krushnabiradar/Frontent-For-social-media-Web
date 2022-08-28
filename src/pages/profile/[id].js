@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { authState, userState } from "redux/store";
+import { getUserProfile } from "redux/actions/actionProfile";
 import { useParams } from "react-router";
 import { Box, Button, Container } from "@mui/material";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import AppsIcon from "@mui/icons-material/Apps";
-import { Info, PostsSaved, ProfilePosts } from "../../components";
-import Loading from "../../components/allResponseMessages/Loading";
-import { getUserProfile } from "../../redux/actions/actionProfile";
-import { authState, userState } from "../../redux/store";
+import { PostsSaved, Loading, Info, ProfilePosts } from "components/index";
 function Profile() {
   const profileUser = useSelector(userState);
   const auth = useSelector(authState);

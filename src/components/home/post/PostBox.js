@@ -1,11 +1,11 @@
-import { Box, Button } from "@mui/material";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { ScrollHook } from "../../../hooks/ScrollHook";
-import { GLOBALTYPES } from "../../../redux/actions/constant";
-import { authState } from "../../../redux/store";
-import { AvatarUser } from "../../../utils/helper";
+import { Box, Button } from "@mui/material";
+import { AvatarUser } from "utils/helper";
+import { ScrollHook } from "hooks/ScrollHook";
+import { authState } from "redux/store";
+import { useSelector, useDispatch } from "react-redux";
+import { GLOBALTYPES } from "redux/actions/constant";
 function PostBox() {
   const { MODEL_POST } = GLOBALTYPES;
   const dispatch = useDispatch();

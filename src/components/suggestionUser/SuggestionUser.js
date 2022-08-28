@@ -1,15 +1,10 @@
-import CelebrationIcon from "@mui/icons-material/Celebration";
-import { Box, Typography } from "@mui/material";
 import React, { useEffect } from "react";
-
-
+import { Box, Typography } from "@mui/material";
+import CelebrationIcon from "@mui/icons-material/Celebration";
+import { Loading, UserCard } from "components/index";
 import { useDispatch, useSelector } from "react-redux";
-import { handleGetSuggestion } from "../../redux/actions/actionSuggestion";
-import { authState, stateSuggestion } from "../../redux/store";
-import Loading from './../allResponseMessages/Loading';
-import UserCard from './../UserCard';
-
-
+import { authState, stateSuggestion } from "redux/store";
+import { handleGetSuggestion } from "redux/actions/actionSuggestion";
 function SuggestionUser() {
   // States And Functions
   const dispatch = useDispatch();
