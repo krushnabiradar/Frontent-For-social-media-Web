@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import { Box, Button } from "@mui/material";
 function LoadMoreButton({ postsCount, page, handleShowMorePost, loading }) {
   return (
@@ -28,4 +28,4 @@ function LoadMoreButton({ postsCount, page, handleShowMorePost, loading }) {
   );
 }
 
-export default memo(LoadMoreButton);
+export default LoadMoreButton;

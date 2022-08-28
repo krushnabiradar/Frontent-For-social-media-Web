@@ -1,33 +1,33 @@
-import React, { useEffect, useRef, useState, createRef } from "react";
-import "emoji-mart/css/emoji-mart.css";
-import { Picker } from "emoji-mart";
 import { CoverModal } from "components/index";
-import { showImage, showVideo } from "utils/media";
-import { AvatarUser } from "utils/helper";
-import { checkMedia } from "utils/checkMedia";
+import { Picker } from "emoji-mart";
+import "emoji-mart/css/emoji-mart.css";
 import { ScrollHook } from "hooks/ScrollHook";
+import { createRef, useEffect, useRef, useState } from "react";
+import { checkMedia } from "utils/checkMedia";
+import { AvatarUser } from "utils/helper";
+import { showImage, showVideo } from "utils/media";
 // redux
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { createPost, updatePost } from "redux/actions/actionPost";
 import { GLOBALTYPES } from "redux/actions/constant";
 import {
   authState,
   openModelPost,
   reducerPosts,
-  socketState,
+  socketState
 } from "redux/store";
-import { createPost, updatePost } from "redux/actions/actionPost";
 // @mui
+import CancelIcon from "@mui/icons-material/Cancel";
+import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
 import InsertPhotoOutlinedIcon from "@mui/icons-material/InsertPhotoOutlined";
 import PublicIcon from "@mui/icons-material/Public";
-import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
-import CancelIcon from "@mui/icons-material/Cancel";
 import {
   Box,
   FormControl,
   IconButton,
   Stack,
-  Typography,
   Tooltip,
+  Typography
 } from "@mui/material";
 
 function PostModal() {

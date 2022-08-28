@@ -1,7 +1,7 @@
-import React, { memo } from "react";
+import React from "react";
 import { LoginComp } from "components/index";
 function Login() {
   return <LoginComp />;
 }
 
-export default memo(Login);
+export default Login;
