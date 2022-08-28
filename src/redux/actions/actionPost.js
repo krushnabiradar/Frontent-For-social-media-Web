@@ -158,7 +158,7 @@ export const likePost =
       // Add Notifications
       const notificationMsg = {
         postId: auth.user._id,
-        title: "like your post.",
+        title: "liked your post.",
         recipients: [post.user._id],
         url: `/post/${post._id}`,
         content: post.caption,

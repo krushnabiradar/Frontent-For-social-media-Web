@@ -19,7 +19,7 @@ function DisplayMessage({ user, message, myMessage, messages, auth }) {
   // handle Delete Message
   const handleDeleteMessage = () => {
     if (!messages) return;
-    if (window.confirm("Do youe want to delete this message"))
+    if (window.confirm("Do you want to delete this message"))
       dispatch(deleteMessage({ messages, message, auth }));
   };
 

@@ -141,7 +141,7 @@ export const followUser =
       // Add Notifications
       const notificationMsg = {
         userId: auth.user._id,
-        title: "follow youe",
+        title: "followed you",
         recipients: [addFollowAndFollowing._id],
         url: `/profile/${auth.user._id}`,
       };

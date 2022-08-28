@@ -230,7 +230,7 @@ function Chat() {
   // handle delete chat
   const handleDeleteChat = () => {
     if (!id) return;
-    if (window.confirm("Do youe want delete chat ?")) {
+    if (window.confirm("Do you want delete chat ?")) {
       dispatch(deleteChat({ id, auth }));
       return navigate("/chats");
     }
