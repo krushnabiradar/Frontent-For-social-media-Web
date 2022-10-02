@@ -25,6 +25,8 @@ import { uploadImages } from "utils/uploadImages";
 // components
 import { Loading, UserChat, DisplayMessage } from "components/index";
 
+
+
 function Chat() {
   const styledChatContainer = {
     width: "100%",
@@ -47,6 +49,7 @@ function Chat() {
     gridTemplateColumns: "70%",
     margin: "10px",
   };
+  
   // States And Functions
   const { GET_MESSAGES } = CHATS_TYPES;
   const textareaRef = createRef();

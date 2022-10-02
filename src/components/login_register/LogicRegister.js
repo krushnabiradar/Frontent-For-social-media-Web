@@ -53,7 +53,7 @@ const LogicRegister = () => {
       id: "5",
       name: "confirmPassword",
       type: "password",
-      placeholder: "Confrim Password",
+      placeholder: "Confirm Password",
       messageError: resMessagesError.confirmPassword,
     },
   ];
